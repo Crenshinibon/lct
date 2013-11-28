@@ -25,7 +25,6 @@
         }
       });
       if (e != null) {
-        console.log(e);
         return _collection.update({
           _id: e._id
         }, {

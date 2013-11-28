@@ -9,10 +9,9 @@ if Meteor.isClient
             0
     
     @pagecount.inc = () ->
-            e = _collection.findOne {pagecount: {$exists: true}}
-            if e?
-                console.log e
-                _collection.update {_id: e._id}, {$inc: {pagecount: 1}}
-            else
-                _collection.insert
-                    pagecount: 1
+        e = _collection.findOne {pagecount: {$exists: true}}
+        if e?
+            _collection.update {_id: e._id}, {$inc: {pagecount: 1}}
+        else
+            _collection.insert
+                pagecount: 1
